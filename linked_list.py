@@ -15,9 +15,9 @@ class LinkedList:
         self.prev = self
     
     def is_sentinel(self):
-        if self.value is None:
-            return True
-        return False
+        if self.value is not None:
+            return False
+        return True
 
     def is_empty(self):
         if self.next is not self or self.prev is not self:
@@ -32,6 +32,7 @@ class LinkedList:
      
     def append(self, node):
         if self.is_empty():
+            self.value = node
             self.next = node
             self.prev = node
             node.next = self
