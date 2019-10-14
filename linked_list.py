@@ -23,3 +23,6 @@ class LinkedList:
         if self.next is not self or self.prev is not self:
             return False
         return True
+    
+    def is_last(self):
+        return self.is_sentinel()

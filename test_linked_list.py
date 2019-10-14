@@ -93,12 +93,12 @@ class TestLinkedList(unittest.TestCase):
         ll.next = ll
         self.assertFalse(ll.is_empty())
 
-    # def test_empty_is_last(self):
-    #     """
-    #     In an empty list, the sentinel is_last().
-    #     """
-    #     ll = LinkedList()
-    #     self.assertTrue(ll.is_last())
+    def test_empty_is_last(self):
+        """
+        In an empty list, the sentinel is_last().
+        """
+        ll = LinkedList()
+        self.assertTrue(ll.is_last())
 
     # def test_last_of_empty(self):
     #     """
