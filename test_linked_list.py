@@ -21,12 +21,12 @@ class TestLinkedList(unittest.TestCase):
         except NameError:
             self.fail("Could not instantiate LinkedList.")
 
-    # def test_no_initial_value(self):
-    #     """
-    #     A list instantiated without a value has a head with a value of None.
-    #     """
-    #     ll = LinkedList()
-    #     self.assertEqual(None, ll.value)
+    def test_no_initial_value(self):
+        """
+        A list instantiated without a value has a head with a value of None.
+        """
+        ll = LinkedList()
+        self.assertEqual(None, ll.value)
 
     # def test_initial_value(self):
     #     """
