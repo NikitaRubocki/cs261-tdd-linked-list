@@ -35,5 +35,6 @@ class LinkedList:
             self.value = node
             self.next = node
             self.prev = node
+            node.value = None
             node.next = self
             node.prev = self

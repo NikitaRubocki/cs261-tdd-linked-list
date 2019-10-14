@@ -147,14 +147,14 @@ class TestLinkedList(unittest.TestCase):
     # Two-Node List
     # """
 
-    # def test_list_with_two_nodes_is_not_empty(self):
-    #     """
-    #     A list with two nodes is not empty.
-    #     """
-    #     ll = LinkedList()
-    #     appendee = LinkedList(fake_value())
-    #     ll.append(appendee)
-    #     self.assertFalse(ll.is_empty())
+    def test_list_with_two_nodes_is_not_empty(self):
+        """
+        A list with two nodes is not empty.
+        """
+        ll = LinkedList()
+        appendee = LinkedList(fake_value())
+        ll.append(appendee)
+        self.assertFalse(ll.is_empty())
 
     def test_first_of_two_nodes_is_not_last(self):
         """
@@ -165,14 +165,14 @@ class TestLinkedList(unittest.TestCase):
         ll.append(appendee)
         self.assertFalse(ll.is_last())
 
-    # def test_second_of_two_nodes_is_last(self):
-    #     """
-    #     In a two-node list, the second node is last.
-    #     """
-    #     ll = LinkedList()
-    #     appendee = LinkedList(fake_value())
-    #     ll.append(appendee)
-    #     self.assertTrue(appendee.is_last())
+    def test_second_of_two_nodes_is_last(self):
+        """
+        In a two-node list, the second node is last.
+        """
+        ll = LinkedList()
+        appendee = LinkedList(fake_value())
+        ll.append(appendee)
+        self.assertTrue(appendee.is_last())
 
     # def test_last_of_two_nodes(self):
     #     """
