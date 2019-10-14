@@ -100,12 +100,12 @@ class TestLinkedList(unittest.TestCase):
         ll = LinkedList()
         self.assertTrue(ll.is_last())
 
-    # def test_last_of_empty(self):
-    #     """
-    #     The last node of an empty list is the sentinel node itself.
-    #     """
-    #     ll = LinkedList()
-    #     self.assertEqual(ll, ll.last())
+    def test_last_of_empty(self):
+        """
+        The last node of an empty list is the sentinel node itself.
+        """
+        ll = LinkedList()
+        self.assertEqual(ll, ll.last())
 
     # def test_append_to_empty_list_sets_next_of_sentinel_to_new_node(self):
     #     """
