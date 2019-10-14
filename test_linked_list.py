@@ -36,12 +36,12 @@ class TestLinkedList(unittest.TestCase):
         ll = LinkedList(value)
         self.assertEqual(value, ll.value)
 
-    # def test_next(self):
-    #     """
-    #     A node's `next` attribute initially refers to itself.
-    #     """
-    #     ll = LinkedList()
-    #     self.assertEqual(ll, ll.next)
+    def test_next(self):
+        """
+        A node's `next` attribute initially refers to itself.
+        """
+        ll = LinkedList()
+        self.assertEqual(ll, ll.next)
 
     # def test_prev(self):
     #     """
