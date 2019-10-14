@@ -32,3 +32,4 @@ class LinkedList:
      
     def append(self, value):
         self.next = value
+        self.prev = value
