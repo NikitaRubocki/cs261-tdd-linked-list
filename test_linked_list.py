@@ -62,12 +62,12 @@ class TestLinkedList(unittest.TestCase):
         ll = LinkedList()
         self.assertTrue(ll.is_sentinel())
 
-    # def test_not_sentinel_node(self):
-    #     """
-    #     A list node with a value is not a sentinel node.
-    #     """
-    #     ll = LinkedList(fake_value())
-    #     self.assertFalse(ll.is_sentinel())
+    def test_not_sentinel_node(self):
+        """
+        A list node with a value is not a sentinel node.
+        """
+        ll = LinkedList(fake_value())
+        self.assertFalse(ll.is_sentinel())
 
     # """
     # Empty List
