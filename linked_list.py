@@ -18,3 +18,8 @@ class LinkedList:
         if self.value is None:
             return True
         return False
+
+    def is_empty(self):
+        if self.next is self:
+            return True
+        return False 
