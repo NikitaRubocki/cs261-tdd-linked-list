@@ -20,6 +20,6 @@ class LinkedList:
         return False
 
     def is_empty(self):
-        if self.next is self:
-            return True
-        return False 
+        if self.next is not self or self.prev is not self:
+            return False
+        return True
