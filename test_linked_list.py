@@ -73,88 +73,88 @@ class TestLinkedList(unittest.TestCase):
     # Empty List
     # """
 
-    def test_empty(self):
-        """
-        A list is initially empty.
-        """
-        ll = LinkedList()
-        self.assertTrue(ll.is_empty())
+    # def test_empty(self):
+    #     """
+    #     A list is initially empty.
+    #     """
+    #     ll = LinkedList()
+    #     self.assertTrue(ll.is_empty())
 
-    def test_not_empty(self):
-        """
-        A list node with a prev or next refering to anything other than itself
-        is not empty.
-        """
-        ll = LinkedList()
-        ll.next = fake_value()
-        self.assertFalse(ll.is_empty())
-        ll.prev = fake_value()
-        self.assertFalse(ll.is_empty())
-        ll.next = ll
-        self.assertFalse(ll.is_empty())
+    # def test_not_empty(self):
+    #     """
+    #     A list node with a prev or next refering to anything other than itself
+    #     is not empty.
+    #     """
+    #     ll = LinkedList()
+    #     ll.next = fake_value()
+    #     self.assertFalse(ll.is_empty())
+    #     ll.prev = fake_value()
+    #     self.assertFalse(ll.is_empty())
+    #     ll.next = ll
+    #     self.assertFalse(ll.is_empty())
 
-    def test_empty_is_last(self):
-        """
-        In an empty list, the sentinel is_last().
-        """
-        ll = LinkedList()
-        self.assertTrue(ll.is_last())
+    # def test_empty_is_last(self):
+    #     """
+    #     In an empty list, the sentinel is_last().
+    #     """
+    #     ll = LinkedList()
+    #     self.assertTrue(ll.is_last())
 
-    def test_last_of_empty(self):
-        """
-        The last node of an empty list is the sentinel node itself.
-        """
-        ll = LinkedList()
-        self.assertEqual(ll, ll.last())
+    # def test_last_of_empty(self):
+    #     """
+    #     The last node of an empty list is the sentinel node itself.
+    #     """
+    #     ll = LinkedList()
+    #     self.assertEqual(ll, ll.last())
 
-    def test_append_to_empty_list_sets_next_of_sentinel_to_new_node(self):
-        """
-        Appending to an empty list sets the sentinel's `next` to the new node.
-        """
-        ll = LinkedList()
-        appendee = LinkedList(fake_value())
-        ll.append(appendee)
-        self.assertEqual(appendee, ll.next)
+    # def test_append_to_empty_list_sets_next_of_sentinel_to_new_node(self):
+    #     """
+    #     Appending to an empty list sets the sentinel's `next` to the new node.
+    #     """
+    #     ll = LinkedList()
+    #     appendee = LinkedList(fake_value())
+    #     ll.append(appendee)
+    #     self.assertEqual(appendee, ll.next)
 
-    def test_append_to_empty_list_sets_prev_of_sentinel_to_new_node(self):
-        """
-        Appending to an empty list sets the sentinel's `prev` to the new node.
-        """
-        ll = LinkedList()
-        appendee = LinkedList(fake_value())
-        ll.append(appendee)
-        self.assertEqual(appendee, ll.prev)
+    # def test_append_to_empty_list_sets_prev_of_sentinel_to_new_node(self):
+    #     """
+    #     Appending to an empty list sets the sentinel's `prev` to the new node.
+    #     """
+    #     ll = LinkedList()
+    #     appendee = LinkedList(fake_value())
+    #     ll.append(appendee)
+    #     self.assertEqual(appendee, ll.prev)
 
-    def test_append_to_empty_list_sets_prev_of_new_node_to_sentinel(self):
-        """
-        Appending to an empty list sets the new node's `prev` to the sentinel.
-        """
-        ll = LinkedList()
-        appendee = LinkedList(fake_value())
-        ll.append(appendee)
-        self.assertEqual(ll, appendee.prev)
+    # def test_append_to_empty_list_sets_prev_of_new_node_to_sentinel(self):
+    #     """
+    #     Appending to an empty list sets the new node's `prev` to the sentinel.
+    #     """
+    #     ll = LinkedList()
+    #     appendee = LinkedList(fake_value())
+    #     ll.append(appendee)
+    #     self.assertEqual(ll, appendee.prev)
 
-    def test_append_to_empty_list_sets_next_of_new_node_to_sentinel(self):
-        """
-        Appending to an empty list sets the new node's `next` to the sentinel.
-        """
-        ll = LinkedList()
-        appendee = LinkedList(fake_value())
-        ll.append(appendee)
-        self.assertEqual(ll, appendee.next)
+    # def test_append_to_empty_list_sets_next_of_new_node_to_sentinel(self):
+    #     """
+    #     Appending to an empty list sets the new node's `next` to the sentinel.
+    #     """
+    #     ll = LinkedList()
+    #     appendee = LinkedList(fake_value())
+    #     ll.append(appendee)
+    #     self.assertEqual(ll, appendee.next)
 
     # """
     # Two-Node List
     # """
 
-    # def test_list_with_two_nodes_is_not_empty(self):
-    #     """
-    #     A list with two nodes is not empty.
-    #     """
-    #     ll = LinkedList()
-    #     appendee = LinkedList(fake_value())
-    #     ll.append(appendee)
-    #     self.assertFalse(ll.is_empty())
+    def test_list_with_two_nodes_is_not_empty(self):
+        """
+        A list with two nodes is not empty.
+        """
+        ll = LinkedList()
+        appendee = LinkedList(fake_value())
+        ll.append(appendee)
+        self.assertFalse(ll.is_empty())
 
     # def test_first_of_two_nodes_is_not_last(self):
     #     """
