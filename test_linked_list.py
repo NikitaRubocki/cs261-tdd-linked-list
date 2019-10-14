@@ -107,14 +107,14 @@ class TestLinkedList(unittest.TestCase):
         ll = LinkedList()
         self.assertEqual(ll, ll.last())
 
-    # def test_append_to_empty_list_sets_next_of_sentinel_to_new_node(self):
-    #     """
-    #     Appending to an empty list sets the sentinel's `next` to the new node.
-    #     """
-    #     ll = LinkedList()
-    #     appendee = LinkedList(fake_value())
-    #     ll.append(appendee)
-    #     self.assertEqual(appendee, ll.next)
+    def test_append_to_empty_list_sets_next_of_sentinel_to_new_node(self):
+        """
+        Appending to an empty list sets the sentinel's `next` to the new node.
+        """
+        ll = LinkedList()
+        appendee = LinkedList(fake_value())
+        ll.append(appendee)
+        self.assertEqual(appendee, ll.next)
 
     # def test_append_to_empty_list_sets_prev_of_sentinel_to_new_node(self):
     #     """
