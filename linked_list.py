@@ -30,6 +30,9 @@ class LinkedList:
     def last(self):
         return self.next
      
-    def append(self, value):
-        self.next = value
-        self.prev = value
+    def append(self, node):
+        if self.is_empty():
+            self.next = node
+            self.prev = node
+            node.next = self
+            node.prev = self
