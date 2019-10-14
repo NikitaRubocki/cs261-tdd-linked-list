@@ -183,17 +183,17 @@ class TestLinkedList(unittest.TestCase):
         ll.append(appendee)
         self.assertEqual(appendee, ll.last())
 
-    # def test_append_to_two_node_list_next_of_sentinel_is_second(self):
-    #     """
-    #     When appending a third node to a two-node list, the sentinel's `next`
-    #     remains the second node.
-    #     """
-    #     ll = LinkedList()
-    #     second_node = LinkedList(fake_value())
-    #     third_node = LinkedList(fake_value())
-    #     ll.append(second_node)
-    #     ll.append(third_node)
-    #     self.assertEqual(second_node, ll.next)
+    def test_append_to_two_node_list_next_of_sentinel_is_second(self):
+        """
+        When appending a third node to a two-node list, the sentinel's `next`
+        remains the second node.
+        """
+        ll = LinkedList()
+        second_node = LinkedList(fake_value())
+        third_node = LinkedList(fake_value())
+        ll.append(second_node)
+        ll.append(third_node)
+        self.assertEqual(second_node, ll.next)
 
     # def test_append_to_two_node_list_prev_of_second_is_sentinel(self):
     #     """
