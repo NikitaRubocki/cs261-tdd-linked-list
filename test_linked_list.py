@@ -391,16 +391,16 @@ class TestLinkedList(unittest.TestCase):
         ll.insert_in_order(LinkedList(6))
         self.assertEqual(6, ll.at(1).value)
 
-    # def test_insert_in_order_greater_than(self):
-    #     """
-    #     Inserting a node in a sorted list when the node's value is greater than
-    #     an existing node's value places the new node after te existing one.
-    #     Example: None -> 8 becomes None -> 8 -> 9
-    #     """
-    #     ll = LinkedList()
-    #     ll.insert_in_order(LinkedList(8))
-    #     ll.insert_in_order(LinkedList(9))
-    #     self.assertEqual(9, ll.at(2).value)
+    def test_insert_in_order_greater_than(self):
+        """
+        Inserting a node in a sorted list when the node's value is greater than
+        an existing node's value places the new node after te existing one.
+        Example: None -> 8 becomes None -> 8 -> 9
+        """
+        ll = LinkedList()
+        ll.insert_in_order(LinkedList(8))
+        ll.insert_in_order(LinkedList(9))
+        self.assertEqual(9, ll.at(2).value)
 
     # def test_insert_in_order_maintains_order_of_values(self):
     #     """
