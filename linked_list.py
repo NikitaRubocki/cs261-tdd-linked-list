@@ -82,9 +82,13 @@ class LinkedList:
     def at(self, num, n=0):
         if n == num:
             return self
+        n += 1
+        return self.next.at(num, n)
+
+    def search(self, value):
+        if self.value == value:
+            return self
+        if self.is_last():
+            return None
         else:
-            n += 1
-            return self.next.at(num, n)
-
-
-    
+            return self.next.search(value)    
