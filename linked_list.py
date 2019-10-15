@@ -79,4 +79,12 @@ class LinkedList:
         # new node links to next node 
         node.next = self
 
+    def at(self, num, n=0):
+        if n == num:
+            return self
+        else:
+            n += 1
+            return self.next.at(num, n)
+
+
     

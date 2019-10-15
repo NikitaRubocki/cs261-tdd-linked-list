@@ -308,40 +308,40 @@ class TestLinkedList(unittest.TestCase):
     # Insertion
     # """
 
-    def test_insert(self):
-        """
-        Inserting a node between two nodes places it between the two nodes.
-        """
-        ll = LinkedList()
-        second_node = LinkedList(fake_value())
-        third_node = LinkedList(fake_value())
-        insertee = LinkedList(fake_value())
-        ll.append(second_node)
-        ll.append(third_node)
-        second_node.insert(insertee)
-        self.assertEqual(insertee, second_node.next)
-        self.assertEqual(second_node, insertee.prev)
-        self.assertEqual(insertee, third_node.prev)
-        self.assertEqual(third_node, insertee.next)
+    # def test_insert(self):
+    #     """
+    #     Inserting a node between two nodes places it between the two nodes.
+    #     """
+    #     ll = LinkedList()
+    #     second_node = LinkedList(fake_value())
+    #     third_node = LinkedList(fake_value())
+    #     insertee = LinkedList(fake_value())
+    #     ll.append(second_node)
+    #     ll.append(third_node)
+    #     second_node.insert(insertee)
+    #     self.assertEqual(insertee, second_node.next)
+    #     self.assertEqual(second_node, insertee.prev)
+    #     self.assertEqual(insertee, third_node.prev)
+    #     self.assertEqual(third_node, insertee.next)
 
     # """
     # Retrieval
     # """
 
-    # def test_at(self):
-    #     """
-    #     At(N) returns the Nth node in the list (where 0 is the sentinel.)
-    #     """
-    #     ll = LinkedList()
-    #     second_node = LinkedList(fake_value())
-    #     third_node = LinkedList(fake_value())
-    #     fourth_node = LinkedList(fake_value())
-    #     ll.append(second_node)
-    #     ll.append(third_node)
-    #     ll.append(fourth_node)
-    #     self.assertEqual(second_node, ll.at(1))
-    #     self.assertEqual(third_node, ll.at(2))
-    #     self.assertEqual(fourth_node, ll.at(3))
+    def test_at(self):
+        """
+        At(N) returns the Nth node in the list (where 0 is the sentinel.)
+        """
+        ll = LinkedList()
+        second_node = LinkedList(fake_value())
+        third_node = LinkedList(fake_value())
+        fourth_node = LinkedList(fake_value())
+        ll.append(second_node)
+        ll.append(third_node)
+        ll.append(fourth_node)
+        self.assertEqual(second_node, ll.at(1))
+        self.assertEqual(third_node, ll.at(2))
+        self.assertEqual(fourth_node, ll.at(3))
 
     # """
     # Search
