@@ -289,40 +289,40 @@ class TestLinkedList(unittest.TestCase):
     # Deletion
     # """
 
-    def test_delete(self):
-        """
-        Deleting a node from the middle of a list removes it from the list.
-        """
-        ll = LinkedList()
-        second_node = LinkedList(fake_value())
-        third_node = LinkedList(fake_value())
-        fourth_node = LinkedList(fake_value())
-        ll.append(second_node)
-        ll.append(third_node)
-        ll.append(fourth_node)
-        third_node.delete()
-        self.assertEqual(fourth_node, second_node.next)
-        self.assertEqual(second_node, fourth_node.prev)
+    # def test_delete(self):
+    #     """
+    #     Deleting a node from the middle of a list removes it from the list.
+    #     """
+    #     ll = LinkedList()
+    #     second_node = LinkedList(fake_value())
+    #     third_node = LinkedList(fake_value())
+    #     fourth_node = LinkedList(fake_value())
+    #     ll.append(second_node)
+    #     ll.append(third_node)
+    #     ll.append(fourth_node)
+    #     third_node.delete()
+    #     self.assertEqual(fourth_node, second_node.next)
+    #     self.assertEqual(second_node, fourth_node.prev)
 
     # """
     # Insertion
     # """
 
-    # def test_insert(self):
-    #     """
-    #     Inserting a node between two nodes places it between the two nodes.
-    #     """
-    #     ll = LinkedList()
-    #     second_node = LinkedList(fake_value())
-    #     third_node = LinkedList(fake_value())
-    #     insertee = LinkedList(fake_value())
-    #     ll.append(second_node)
-    #     ll.append(third_node)
-    #     second_node.insert(insertee)
-    #     self.assertEqual(insertee, second_node.next)
-    #     self.assertEqual(second_node, insertee.prev)
-    #     self.assertEqual(insertee, third_node.prev)
-    #     self.assertEqual(third_node, insertee.next)
+    def test_insert(self):
+        """
+        Inserting a node between two nodes places it between the two nodes.
+        """
+        ll = LinkedList()
+        second_node = LinkedList(fake_value())
+        third_node = LinkedList(fake_value())
+        insertee = LinkedList(fake_value())
+        ll.append(second_node)
+        ll.append(third_node)
+        second_node.insert(insertee)
+        self.assertEqual(insertee, second_node.next)
+        self.assertEqual(second_node, insertee.prev)
+        self.assertEqual(insertee, third_node.prev)
+        self.assertEqual(third_node, insertee.next)
 
     # """
     # Retrieval

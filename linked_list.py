@@ -25,7 +25,9 @@ class LinkedList:
         return True
     
     def is_last(self):
-        return self.is_sentinel()
+        if self.next.is_sentinel():
+            return True
+        return False
 
     def last(self):
         if self.is_last():
@@ -33,10 +35,8 @@ class LinkedList:
         return self.next.last()
     
     def _linkEmptyList(self, node):
-        self.value = node
         self.next = node
         self.prev = node
-        node.value = None
         node.next = self
         node.prev = self
     
@@ -50,8 +50,6 @@ class LinkedList:
         # set "front" node to "last" node
         self = self.last()
         # link "last" node and new node
-        self.value = node
-        node.value = None
         self.next = node
         node.prev = self
 
@@ -67,4 +65,18 @@ class LinkedList:
         self = self.next
         # set next node to point "over" the deleted node to prev
         self.prev = prev_node
+
+    def insert(self, node):
+        next_node = self.next
+        # prev node links to new node
+        self.next = node
+        # new node links to prev node
+        node.prev = self
+        # set self to next node
+        self = next_node
+        # next node links to new node 
+        self.prev = node
+        # new node links to next node 
+        node.next = self
+
     
