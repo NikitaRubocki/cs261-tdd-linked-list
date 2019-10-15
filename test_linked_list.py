@@ -371,55 +371,55 @@ class TestLinkedList(unittest.TestCase):
     # Maintaining Order
     # """
 
-    def test_insert_in_order_when_empty(self):
-        """
-        Inserting a node in an empty sorted list just appends the new node.
-        """
-        ll = LinkedList()
-        ll.insert_in_order(LinkedList(8))
-        self.assertEqual(None, ll.at(0).value)
-        self.assertEqual(8, ll.at(1).value)
-
-    def test_insert_in_order_less_than(self):
-        """
-        Inserting a node in a sorted list when the node's value is less than an
-        existing node's value places the new node before the existing one.
-        Example: None -> 8 becomes None -> 6 -> 8
-        """
-        ll = LinkedList()
-        ll.insert_in_order(LinkedList(8))
-        ll.insert_in_order(LinkedList(6))
-        self.assertEqual(6, ll.at(1).value)
-
-    def test_insert_in_order_greater_than(self):
-        """
-        Inserting a node in a sorted list when the node's value is greater than
-        an existing node's value places the new node after te existing one.
-        Example: None -> 8 becomes None -> 8 -> 9
-        """
-        ll = LinkedList()
-        ll.insert_in_order(LinkedList(8))
-        ll.insert_in_order(LinkedList(9))
-        self.assertEqual(9, ll.at(2).value)
-
-    # def test_insert_in_order_maintains_order_of_values(self):
+    # def test_insert_in_order_when_empty(self):
     #     """
-    #     Inserting nodes of arbitrary values results in the list maintaining the
-    #     sorted order of nodes based on their value.
-    #     Example: inserting 8, 6, 7, 5, 3, 0, 9 results in: 0, 3, 5, 6, 7, 8, 9
+    #     Inserting a node in an empty sorted list just appends the new node.
     #     """
-    #     values = [8, 6, 7, 5, 3, 0, 9]
     #     ll = LinkedList()
-    #     for value in values:
-    #         ll.insert_in_order(LinkedList(value))
+    #     ll.insert_in_order(LinkedList(8))
     #     self.assertEqual(None, ll.at(0).value)
-    #     self.assertEqual(0, ll.at(1).value)
-    #     self.assertEqual(3, ll.at(2).value)
-    #     self.assertEqual(5, ll.at(3).value)
-    #     self.assertEqual(6, ll.at(4).value)
-    #     self.assertEqual(7, ll.at(5).value)
-    #     self.assertEqual(8, ll.at(6).value)
-    #     self.assertEqual(9, ll.at(7).value)
+    #     self.assertEqual(8, ll.at(1).value)
+
+    # def test_insert_in_order_less_than(self):
+    #     """
+    #     Inserting a node in a sorted list when the node's value is less than an
+    #     existing node's value places the new node before the existing one.
+    #     Example: None -> 8 becomes None -> 6 -> 8
+    #     """
+    #     ll = LinkedList()
+    #     ll.insert_in_order(LinkedList(8))
+    #     ll.insert_in_order(LinkedList(6))
+    #     self.assertEqual(6, ll.at(1).value)
+
+    # def test_insert_in_order_greater_than(self):
+    #     """
+    #     Inserting a node in a sorted list when the node's value is greater than
+    #     an existing node's value places the new node after the existing one.
+    #     Example: None -> 8 becomes None -> 8 -> 9
+    #     """
+    #     ll = LinkedList()
+    #     ll.insert_in_order(LinkedList(8))
+    #     ll.insert_in_order(LinkedList(9))
+    #     self.assertEqual(9, ll.at(2).value)
+
+    def test_insert_in_order_maintains_order_of_values(self):
+        """
+        Inserting nodes of arbitrary values results in the list maintaining the
+        sorted order of nodes based on their value.
+        Example: inserting 8, 6, 7, 5, 3, 0, 9 results in: 0, 3, 5, 6, 7, 8, 9
+        """
+        values = [8, 6, 7, 5, 3, 0, 9]
+        ll = LinkedList()
+        for value in values:
+            ll.insert_in_order(LinkedList(value))
+        self.assertEqual(None, ll.at(0).value)
+        self.assertEqual(0, ll.at(1).value)
+        self.assertEqual(3, ll.at(2).value)
+        self.assertEqual(5, ll.at(3).value)
+        self.assertEqual(6, ll.at(4).value)
+        self.assertEqual(7, ll.at(5).value)
+        self.assertEqual(8, ll.at(6).value)
+        self.assertEqual(9, ll.at(7).value)
 
 
 def fake_value():
