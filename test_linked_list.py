@@ -380,16 +380,16 @@ class TestLinkedList(unittest.TestCase):
         self.assertEqual(None, ll.at(0).value)
         self.assertEqual(8, ll.at(1).value)
 
-    # def test_insert_in_order_less_than(self):
-    #     """
-    #     Inserting a node in a sorted list when the node's value is less than an
-    #     existing node's value places the new node before the existing one.
-    #     Example: None -> 8 becomes None -> 6 -> 8
-    #     """
-    #     ll = LinkedList()
-    #     ll.insert_in_order(LinkedList(8))
-    #     ll.insert_in_order(LinkedList(6))
-    #     self.assertEqual(6, ll.at(1).value)
+    def test_insert_in_order_less_than(self):
+        """
+        Inserting a node in a sorted list when the node's value is less than an
+        existing node's value places the new node before the existing one.
+        Example: None -> 8 becomes None -> 6 -> 8
+        """
+        ll = LinkedList()
+        ll.insert_in_order(LinkedList(8))
+        ll.insert_in_order(LinkedList(6))
+        self.assertEqual(6, ll.at(1).value)
 
     # def test_insert_in_order_greater_than(self):
     #     """

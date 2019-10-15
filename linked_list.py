@@ -82,8 +82,9 @@ class LinkedList:
     def insert_in_order(self, node):
         if self.is_empty():
             return self.append(node)
-        # if self.value < node.value:
-        #     return self.insert(node)
+        if self.is_sentinel() is False and self.value > node.value:
+            return self.prev.insert(node)
+        return self.next.insert_in_order(node)
 
 
 
