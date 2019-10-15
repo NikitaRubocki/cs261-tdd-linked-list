@@ -31,30 +31,40 @@ class LinkedList:
         if self.is_last():
             return self
         return self.next.last()
-     
+    
+    def _linkEmptyList(self, node):
+        self.value = node
+        self.next = node
+        self.prev = node
+        node.value = None
+        node.next = self
+        node.prev = self
+    
     def append(self, node):
         if self.is_empty():
-            self.value = node
-            self.next = node
-            self.prev = node
-            node.value = None
-            node.next = self
-            node.prev = self
+            self._linkEmptyList(node)
             return
-        # if self.is_last():
-        #     self.value = node
-        #     node.value = None
-        #     self.next = node
-        #     node.prev = self
-        # else:
-        #     self.prev = node
-        #     node.next = self
-        #     # self = self.next
-        #     self.next.append(node)
+        # link "front" node and new node together
         self.prev = node
         node.next = self
+        # set "front" node to "last" node
         self = self.last()
+        # link "last" node and new node
         self.value = node
         node.value = None
         self.next = node
         node.prev = self
+
+    def delete(self):
+        # hold the pointers for the node being deleted
+        prev_node = self.prev
+        next_node = self.next
+        # set self to prev node
+        self = self.prev
+        # set prev node to point "over" the deleted node to next
+        self.next = next_node
+        # set self to next node
+        self = self.next
+        # set next node to point "over" the deleted node to prev
+        self.prev = prev_node
+    
