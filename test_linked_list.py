@@ -219,17 +219,17 @@ class TestLinkedList(unittest.TestCase):
         ll.append(third_node)
         self.assertEqual(third_node, second_node.next)
 
-    # def test_append_to_two_node_list_prev_of_third_is_second(self):
-    #     """
-    #     When appending a third node to a two-node list, the third node's `prev`
-    #     is the second node.
-    #     """
-    #     ll = LinkedList()
-    #     second_node = LinkedList(fake_value())
-    #     third_node = LinkedList(fake_value())
-    #     ll.append(second_node)
-    #     ll.append(third_node)
-    #     self.assertEqual(second_node, third_node.prev)
+    def test_append_to_two_node_list_prev_of_third_is_second(self):
+        """
+        When appending a third node to a two-node list, the third node's `prev`
+        is the second node.
+        """
+        ll = LinkedList()
+        second_node = LinkedList(fake_value())
+        third_node = LinkedList(fake_value())
+        ll.append(second_node)
+        ll.append(third_node)
+        self.assertEqual(second_node, third_node.prev)
 
     # def test_append_to_two_node_list_sets_next_of_third_node_to_sentinel(self):
     #     """
