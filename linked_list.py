@@ -90,5 +90,4 @@ class LinkedList:
             return self
         if self.is_last():
             return None
-        else:
-            return self.next.search(value)    
+        return self.next.search(value)    
