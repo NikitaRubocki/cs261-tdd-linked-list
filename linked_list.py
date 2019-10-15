@@ -79,6 +79,14 @@ class LinkedList:
         # new node links to next node 
         node.next = self
 
+    def insert_in_order(self, node):
+        if self.is_empty():
+            return self.append(node)
+        # if self.value < node.value:
+        #     return self.insert(node)
+
+
+
     def at(self, num, n=0):
         if n == num:
             return self

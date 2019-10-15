@@ -347,38 +347,38 @@ class TestLinkedList(unittest.TestCase):
     # Search
     # """
 
-    def test_search_returns_none_when_not_found(self):
-        """
-        Searching for a node with a particular value that does not exist in the
-        linked list returns None.
-        """
-        ll = LinkedList()
-        second_node = LinkedList("FAKE")
-        self.assertEqual(None, ll.search("X"))
+    # def test_search_returns_none_when_not_found(self):
+    #     """
+    #     Searching for a node with a particular value that does not exist in the
+    #     linked list returns None.
+    #     """
+    #     ll = LinkedList()
+    #     second_node = LinkedList("FAKE")
+    #     self.assertEqual(None, ll.search("X"))
 
-    def test_search_returns_node_when_found(self):
-        """
-        Searching for a node with a particular value returns that node, if it
-        exists in the linked list.
-        """
-        value = "FAKE"
-        ll = LinkedList()
-        second_node = LinkedList(value)
-        ll.append(second_node)
-        self.assertEqual(second_node, ll.search(value))
+    # def test_search_returns_node_when_found(self):
+    #     """
+    #     Searching for a node with a particular value returns that node, if it
+    #     exists in the linked list.
+    #     """
+    #     value = "FAKE"
+    #     ll = LinkedList()
+    #     second_node = LinkedList(value)
+    #     ll.append(second_node)
+    #     self.assertEqual(second_node, ll.search(value))
 
     # """
     # Maintaining Order
     # """
 
-    # def test_insert_in_order_when_empty(self):
-    #     """
-    #     Inserting a node in an empty sorted list just appends the new node.
-    #     """
-    #     ll = LinkedList()
-    #     ll.insert_in_order(LinkedList(8))
-    #     self.assertEqual(None, ll.at(0).value)
-    #     self.assertEqual(8, ll.at(1).value)
+    def test_insert_in_order_when_empty(self):
+        """
+        Inserting a node in an empty sorted list just appends the new node.
+        """
+        ll = LinkedList()
+        ll.insert_in_order(LinkedList(8))
+        self.assertEqual(None, ll.at(0).value)
+        self.assertEqual(8, ll.at(1).value)
 
     # def test_insert_in_order_less_than(self):
     #     """
