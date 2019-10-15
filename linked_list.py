@@ -28,7 +28,9 @@ class LinkedList:
         return self.is_sentinel()
 
     def last(self):
-        return self.next
+        if self.is_last():
+            return self
+        return self.next.last()
      
     def append(self, node):
         if self.is_empty():
@@ -47,5 +49,5 @@ class LinkedList:
         else:
             self.prev = node
             node.next = self
-            self = self.next
-            self.append(node)
+            # self = self.next
+            self.next.append(node)
