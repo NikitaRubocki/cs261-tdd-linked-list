@@ -41,13 +41,20 @@ class LinkedList:
             node.next = self
             node.prev = self
             return
-        if self.is_last():
-            self.value = node
-            node.value = None
-            self.next = node
-            node.prev = self
-        else:
-            self.prev = node
-            node.next = self
-            # self = self.next
-            self.next.append(node)
+        # if self.is_last():
+        #     self.value = node
+        #     node.value = None
+        #     self.next = node
+        #     node.prev = self
+        # else:
+        #     self.prev = node
+        #     node.next = self
+        #     # self = self.next
+        #     self.next.append(node)
+        self.prev = node
+        node.next = self
+        self = self.last()
+        self.value = node
+        node.value = None
+        self.next = node
+        node.prev = self
