@@ -39,19 +39,22 @@ class LinkedList:
         self.prev = node
         node.next = self
         node.prev = self
-    
+
     def append(self, node):
         if self.is_empty():
             self._linkEmptyList(node)
             return
-        # link "front" node and new node together
-        self.prev = node
-        node.next = self
-        # set "front" node to "last" node
-        self = self.last()
-        # link "last" node and new node
-        self.next = node
-        node.prev = self
+        if self.is_sentinel():
+            # link "front" node and new node together
+            self.prev = node
+            node.next = self
+            # set "front" node to "last" node
+            self = self.last()
+            # link "last" node and new node
+            self.next = node
+            node.prev = self
+            return
+        self.next.append(node)
 
     def delete(self):
         # hold the pointers for the node being deleted
