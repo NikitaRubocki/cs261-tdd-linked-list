@@ -15,9 +15,7 @@ class LinkedList:
         self.prev = self
     
     def is_sentinel(self):
-        if self.value is not None:
-            return False
-        return True
+        return self.value is None
 
     def is_empty(self):
         if self.next is not self or self.prev is not self:
@@ -25,9 +23,7 @@ class LinkedList:
         return True
     
     def is_last(self):
-        if self.next.is_sentinel():
-            return True
-        return False
+        return self.next.is_sentinel()
 
     def last(self):
         if self.is_last():
